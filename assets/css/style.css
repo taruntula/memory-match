@@ -65,12 +65,63 @@ main {
 }
 
 .card {
+  position: relative;
   height: 30%;
   width: 15%;
-  box-sizing: border-box;
+
   /* border-style: solid; */
+  /* background-image: url("../images/lfz-card.jpg");
+  background-position: center center;
+  background-size: contain; */
+}
+
+.lfz-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
   background-image: url("../images/lfz-card.jpg");
   background-position: center center;
-  background-size: contain;
+  background-size: cover;
+}
+
+.random-card-1, .random-card-2, .random-card-3, .random-card-4, .random-card-5,
+.random-card-6, .random-card-7, .random-card-8, .random-card-9 {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.random-card-1 {
+  background-image: url("../images/css-logo.png");
+}
+.random-card-2 {
+  background-image: url("../images/docker-logo.jpg");
+}
+.random-card-3 {
+  background-image: url("../images/gitHub-logo.png");
+}
+.random-card-4 {
+  background-image: url("../images/html-logo.png");
+}
+.random-card-5 {
+  background-image: url("../images/js-logo.png");
+}
+.random-card-6 {
+  background-image: url("../images/mysql-logo.jpg");
+}
+.random-card-7 {
+  background-image: url("../images/node-logo.png");
+}
+.random-card-8 {
+  background-image: url("../images/php-logo.jpeg");
+}
+.random-card-9 {
+  background-image: url("../images/react-logo.png");
+}
+
+.hidden {
+display: none;
 }
 /* use display : flex for container only */
