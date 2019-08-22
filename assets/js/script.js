@@ -1,4 +1,10 @@
 $(document).ready(initializeApp);
+var firstCardClicked = null;
+var secondCardClicked = null;
+var matches = null;
+var clickCounter = 0;
+var isSecondCardClicked = false;
+
 
 function initializeApp(){
   var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
@@ -9,12 +15,6 @@ function initializeApp(){
   "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick);
-  // shuffle(randomCardClassesArray);
-  // // console.log(randomCardClassesArray);
-  // for (var integerI = 0; integerI< 18; integerI++){
-  //   var startAtOneIndex = integerI + 1;
-  //   var randomCardDiv = $("<div>").addClass(randomCardClassesArray[integerI]);
-  //   $("#card"+startAtOneIndex).append(randomCardDiv);
   }
 
 
@@ -44,5 +44,41 @@ function shuffle(array) {
 
 function handleCardClick (event){
   $(event.currentTarget).addClass("hidden");
+  if (clickCounter === 0){
+    firstCardClicked = $(event.currentTarget);
+    clickCounter = 1;
+    isSecondCardClicked = false;
+  }
+  else if (clickCounter > 0){
+    secondCardClicked = $(event.currentTarget);
+    isSecondCardClicked = true;
+    clickCounter = 0;
+  }
+  if (isSecondCardClicked){
+    var frontCard1 = $(firstCardClicked).siblings();
+    var frontCard2 = $(secondCardClicked).siblings();
+    if ($(frontCard1).css("background-image") == $(frontCard2).css("background-image")){
+      console.log("cards match");
+      setTimeout(function () {
+        frontCard1.addClass("hidden");
+        frontCard2.addClass("hidden");
+      }, 1500);
+      matches+=1;
 
+    }
+    else{
+      setTimeout(function(){
+        $(firstCardClicked).removeClass('hidden');
+        $(secondCardClicked).removeClass('hidden');
+      },1500);
+    }
+  }
+
+
+
+
+
+
+  // firstCardClicked = $(event.currentTarget);
+  // console.log(firstCardClicked);
 }
