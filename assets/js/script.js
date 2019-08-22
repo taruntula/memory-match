@@ -4,6 +4,7 @@ var secondCardClicked = null;
 var matches = null;
 var clickCounter = 0;
 var isSecondCardClicked = false;
+var max_matches = 9;
 
 
 function initializeApp(){
@@ -15,6 +16,9 @@ function initializeApp(){
   "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick);
+  // if (matches === max_matches){
+
+  // }
   }
 
 
@@ -58,12 +62,13 @@ function handleCardClick (event){
     var frontCard1 = $(firstCardClicked).siblings();
     var frontCard2 = $(secondCardClicked).siblings();
     if ($(frontCard1).css("background-image") == $(frontCard2).css("background-image")){
-      console.log("cards match");
+      matches += 1;
       setTimeout(function () {
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
       }, 1500);
-      matches+=1;
+
+
 
     }
     else{
