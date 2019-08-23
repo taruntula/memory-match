@@ -5,6 +5,8 @@ var matches = null;
 var clickCounter = 0;
 var isSecondCardClicked = false;
 var max_matches = 9;
+var attempts = null;
+var games_played = 1;
 
 
 
@@ -17,6 +19,7 @@ function initializeApp(){
   "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick);
+
 }
 function addRandomCards (randomArray){
   shuffle(randomArray);
@@ -52,6 +55,7 @@ function handleCardClick (event){
     clickCounter = 0;
   }
   if (isSecondCardClicked){
+    attempts++;
     var frontCard1 = $(firstCardClicked).siblings();
     var frontCard2 = $(secondCardClicked).siblings();
     if ($(frontCard1).css("background-image") == $(frontCard2).css("background-image")){
@@ -70,14 +74,24 @@ function handleCardClick (event){
     if (matches === max_matches) {
       var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
       $("body").append(winnerNotification);
+      games_played++
     }
   }
-
-
-
-
-
-
   // firstCardClicked = $(event.currentTarget);
-  // console.log(firstCardClicked);
+ // console.log(firstCardClicked);
+  displayStats();
+}
+
+function calculateAccuracy(){
+  var accuracy = matches/attempts;
+  var percentage = accuracy * 100;
+  return percentage;
+}
+
+function displayStats(){
+  var accuracy = calculateAccuracy();
+  var percentage = Math.floor(accuracy);
+  $("#attempts-made").text(attempts);
+  $("#accuracy-percentage").text(percentage+"%");
+  $("#games-played").text(games_played);
 }
