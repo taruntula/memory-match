@@ -19,6 +19,16 @@ body, html {
   text-align: center;
 
 }
+.button {
+  background-color: chartreuse;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 header {
   font-size: xx-large;
   display: flex;
@@ -80,13 +90,19 @@ main {
   position: relative;
   height: 30%;
   width: 15%;
+  }
 
+.card:hover {
+        transform: scale(1.1);
+  }
+
+.grow {
+  transition: all .2s ease-in-out;
+  }
   /* border-style: solid; */
   /* background-image: url("../images/lfz-card.jpg");
   background-position: center center;
   background-size: contain; */
-}
-
 .lfz-card {
   position: absolute;
   height: 100%;

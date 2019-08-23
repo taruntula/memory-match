@@ -73,8 +73,15 @@ function handleCardClick (event){
     }
     if (matches === max_matches) {
       var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
+      var resetButton = $("<button>").addClass("button").text("Play Again?");
       $("body").append(winnerNotification);
-      games_played++
+      winnerNotification.append(resetButton);
+      $(resetButton).on('click',function() {
+        resetStats();
+        winnerNotification.addClass("hidden");
+        resetButton.addClass("hidden");
+      });
+      games_played++;
     }
   }
   // firstCardClicked = $(event.currentTarget);
@@ -84,6 +91,9 @@ function handleCardClick (event){
 
 function calculateAccuracy(){
   var accuracy = matches/attempts;
+  if (isNaN(accuracy)){
+    accuracy = 0;
+  }
   var percentage = accuracy * 100;
   return percentage;
 }
@@ -94,4 +104,20 @@ function displayStats(){
   $("#attempts-made").text(attempts);
   $("#accuracy-percentage").text(percentage+"%");
   $("#games-played").text(games_played);
+  // if (resetGame == true){
+  //   $("#attempts-made").text(0);
+  //   $("#accuracy-percentage").text(0 + "%");
+  // }
+  // resetGame = false;
+}
+
+function resetStats(){
+  matches = null;
+  attempts = null;
+  displayStats();
+  $(".lfz-card").removeClass("hidden");
+  $(".lfz-card").siblings().removeClass("hidden");
+
+
+
 }
