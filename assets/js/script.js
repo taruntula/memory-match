@@ -7,6 +7,7 @@ var isSecondCardClicked = false;
 var max_matches = 9;
 
 
+
 function initializeApp(){
   var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
   "random-card-3","random-card-3","random-card-4",
@@ -16,14 +17,7 @@ function initializeApp(){
   "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick);
-  // if (matches === max_matches){
-
-  // }
-  }
-
-
-
-
+}
 function addRandomCards (randomArray){
   shuffle(randomArray);
   // console.log(randomCardClassesArray);
@@ -37,7 +31,6 @@ function addRandomCards (randomArray){
 function shuffle(array) {
   var i,j = 0;
   var temp = null;
-
   for (i = array.length - 1; i > 0; i -= 1) {
     j = Math.floor(Math.random() * (i + 1))
     temp = array[i]
@@ -67,15 +60,16 @@ function handleCardClick (event){
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
       }, 1500);
-
-
-
     }
     else{
       setTimeout(function(){
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
       },1500);
+    }
+    if (matches === max_matches) {
+      var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
+      $("body").append(winnerNotification);
     }
   }
 
