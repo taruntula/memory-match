@@ -90,6 +90,7 @@ main {
   position: relative;
   height: 30%;
   width: 15%;
+  transform-style: preserve-3d;
   }
 
 .card:hover {
