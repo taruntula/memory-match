@@ -1,1 +1,168 @@
+body, html {
+  /* background-color: palegoldenrod; */
+    margin: 0;
+    background-image: url("../images/samurai-background.jpg");
+    background-position: center;
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+}
+.winning_box {
+  position: fixed;
+  background-image: url("../images/winner.jpg");
+  background-position: center;
+  background-size:cover;
+  height: 50%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  background-color: violet;
+  text-align: right;
+}
+.button {
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  height: 20%;
+  width: 20%;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:auto;
+}
+header {
+  background-image: url("../images/SJ.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* font-size: xx-large; */
+  display: flex;
+  justify-content: center;
+  height: 15%;
+  /* border-style: solid; */
+  margin: auto;
 
+}
+aside {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  /* border-style: solid; */
+  width: 20%;
+  align-items: center;
+  height: 85%;
+  margin: 5px;
+  font-size: large;
+}
+
+aside div {
+  /* float: left; */
+  display: flex;
+  background-color: rgba(85, 197, 160, 0.7);
+  /* flex-direction: column; */
+  justify-content: center;
+  font-size: large;
+  border-style: solid;
+  margin: 5px;
+  align-items: center;
+  width: 90%;
+  height: 16.6%;
+
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 85%;
+  width: 78%;
+  margin: 5px;
+  /* border-style: solid; */
+  margin-left: auto;
+
+}
+.div-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  /* align content for multiple rows or columns */
+
+}
+
+.card {
+  position: relative;
+  height: 30%;
+  width: 15%;
+  transform-style: preserve-3d;
+  }
+
+.card:hover {
+        transform: scale(1.1);
+  }
+
+.grow {
+  transition: all .2s ease-in-out;
+  }
+  /* border-style: solid; */
+  /* background-image: url("../images/lfz-card.jpg");
+  background-position: center center;
+  background-size: contain; */
+.lfz-card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url("../images/samurai-jack-back.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.random-card-1, .random-card-2, .random-card-3, .random-card-4, .random-card-5,
+.random-card-6, .random-card-7, .random-card-8, .random-card-9 {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.random-card-1 {
+  background-image: url("../images/SJ-card-1.jpg");
+}
+.random-card-2 {
+  background-image: url("../images/SJ-card-2.jpg");
+}
+.random-card-3 {
+  background-image: url("../images/SJ-card-3.jpg");
+}
+.random-card-4 {
+  background-image: url("../images/SJ-card-4.png");
+}
+.random-card-5 {
+  background-image: url("../images/SJ-card-5.jpg");
+}
+.random-card-6 {
+  background-image: url("../images/SJ-card-6.png");
+}
+.random-card-7 {
+  background-image: url("../images/SJ-card-7.jpg");
+}
+.random-card-8 {
+  background-image: url("../images/SJ-card-8.jpg");
+}
+.random-card-9 {
+  background-image: url("../images/SJ-card-9.png");
+}
+
+.hidden {
+display: none;
+}
+/* use display : flex for container only */
