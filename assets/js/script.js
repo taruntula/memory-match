@@ -18,7 +18,7 @@ function initializeApp(){
   "random-card-7","random-card-8","random-card-8",
   "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
-  $(".lfz-card").on('click',handleCardClick);
+  $(".lfz-card").on('click',handleCardClick); //can do .off to take off click  handler.
 
 }
 function addRandomCards (randomArray){
@@ -58,7 +58,7 @@ function handleCardClick (event){
     attempts++;
     var frontCard1 = $(firstCardClicked).siblings();
     var frontCard2 = $(secondCardClicked).siblings();
-    if ($(frontCard1).css("background-image") == $(frontCard2).css("background-image")){
+    if ($(frontCard1).css("background-image") === $(frontCard2).css("background-image")){
       matches += 1;
       setTimeout(function () {
         frontCard1.addClass("hidden");
