@@ -23,7 +23,6 @@ function initializeApp(){
 }
 function addRandomCards (randomArray){
   shuffle(randomArray);
-  // console.log(randomCardClassesArray);
   for (var integerI = 0; integerI < randomArray.length; integerI++) {
     var startAtOneIndex = integerI + 1;
     var randomCardDiv = $("<div>").addClass(randomArray[integerI]);
@@ -55,18 +54,21 @@ function handleCardClick (event){
     clickCounter = 0;
   }
   if (isSecondCardClicked){
+    $(".lfz-card").off('click', handleCardClick);
     attempts++;
     var frontCard1 = $(firstCardClicked).siblings();
     var frontCard2 = $(secondCardClicked).siblings();
     if ($(frontCard1).css("background-image") === $(frontCard2).css("background-image")){
       matches += 1;
       setTimeout(function () {
+        $(".lfz-card").on('click', handleCardClick);
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
       }, 1500);
     }
     else{
       setTimeout(function(){
+        $(".lfz-card").on('click', handleCardClick);
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
       },1500);
@@ -104,11 +106,6 @@ function displayStats(){
   $("#attempts-made").text(attempts);
   $("#accuracy-percentage").text(percentage+"%");
   $("#games-played").text(games_played);
-  // if (resetGame == true){
-  //   $("#attempts-made").text(0);
-  //   $("#accuracy-percentage").text(0 + "%");
-  // }
-  // resetGame = false;
 }
 
 function resetStats(){
@@ -117,7 +114,4 @@ function resetStats(){
   displayStats();
   $(".lfz-card").removeClass("hidden");
   $(".lfz-card").siblings().removeClass("hidden");
-
-
-
 }
