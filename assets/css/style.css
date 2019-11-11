@@ -112,10 +112,7 @@ main {
 .grow {
   transition: all .2s ease-in-out;
   }
-  /* border-style: solid; */
-  /* background-image: url("../images/lfz-card.jpg");
-  background-position: center center;
-  background-size: contain; */
+
 .lfz-card {
   position: absolute;
   height: 100%;
@@ -163,6 +160,8 @@ main {
 }
 
 .hidden {
-display: none;
+/* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
 }
-/* use display : flex for container only */

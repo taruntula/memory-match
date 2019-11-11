@@ -9,7 +9,6 @@ var attempts = null;
 var games_played = 1;
 
 
-
 function initializeApp(){
   var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
   "random-card-3","random-card-3","random-card-4",
