@@ -60,16 +60,16 @@ function handleCardClick (event){
     if ($(frontCard1).css("background-image") === $(frontCard2).css("background-image")){
       matches += 1;
       setTimeout(function () {
-        $(".lfz-card").on('click', handleCardClick);
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
+        $(".lfz-card").on('click', handleCardClick);
       }, 1500);
     }
     else{
       setTimeout(function(){
-        $(".lfz-card").on('click', handleCardClick);
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
+        $(".lfz-card").on('click', handleCardClick);
       },1500);
     }
     if (matches === max_matches) {
@@ -85,8 +85,6 @@ function handleCardClick (event){
       games_played++;
     }
   }
-  // firstCardClicked = $(event.currentTarget);
- // console.log(firstCardClicked);
   displayStats();
 }
 
