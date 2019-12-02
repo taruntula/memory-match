@@ -1,3 +1,4 @@
+
 body, html {
   /* background-color: palegoldenrod; */
     margin: 0;
@@ -53,6 +54,7 @@ header {
 
 }
 aside {
+  font-family: made_in_chinaregular;
   float: left;
   display: flex;
   flex-direction: column;
