@@ -119,7 +119,18 @@ main {
   transition: all .2s ease-in-out;
   }
 
-.lfz-card {
+  #bm {
+  position: absolute;
+      transform: translate3d(-105px,-280px,0px);
+    height: 400%;
+    width: 220%;
+
+  /* box-sizing: border-box; */
+  /* background-image: url("../images/samurai-jack-back.png"); */
+  /* background-position: center center; */
+  /* background-size: cover; */
+}
+/* .lfz-card {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -127,7 +138,7 @@ main {
   background-image: url("../images/samurai-jack-back.png");
   background-position: center center;
   background-size: cover;
-}
+} */
 
 .random-card-1, .random-card-2, .random-card-3, .random-card-4, .random-card-5,
 .random-card-6, .random-card-7, .random-card-8, .random-card-9 {
