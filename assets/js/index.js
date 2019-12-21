@@ -6,6 +6,6 @@ var animation = lottie.loadAnimation({
   //   PreserveAspectRatio: 'xMidYMid slice',
   // },
   loop: false,
-  autoplay: true,
+  autoplay: false,
   path: 'data.json'
 })
