@@ -9,7 +9,6 @@ var attempts = null;
 var games_played = 1;
 
 
-
 function initializeApp(){
   var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
   "random-card-3","random-card-3","random-card-4",
@@ -23,7 +22,6 @@ function initializeApp(){
 }
 function addRandomCards (randomArray){
   shuffle(randomArray);
-  // console.log(randomCardClassesArray);
   for (var integerI = 0; integerI < randomArray.length; integerI++) {
     var startAtOneIndex = integerI + 1;
     var randomCardDiv = $("<div>").addClass(randomArray[integerI]);
@@ -55,6 +53,7 @@ function handleCardClick (event){
     clickCounter = 0;
   }
   if (isSecondCardClicked){
+    $(".lfz-card").off('click', handleCardClick);
     attempts++;
     var frontCard1 = $(firstCardClicked).siblings();
     var frontCard2 = $(secondCardClicked).siblings();
@@ -63,12 +62,14 @@ function handleCardClick (event){
       setTimeout(function () {
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
+        $(".lfz-card").on('click', handleCardClick);
       }, 1500);
     }
     else{
       setTimeout(function(){
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
+        $(".lfz-card").on('click', handleCardClick);
       },1500);
     }
     if (matches === max_matches) {
@@ -84,8 +85,6 @@ function handleCardClick (event){
       games_played++;
     }
   }
-  // firstCardClicked = $(event.currentTarget);
- // console.log(firstCardClicked);
   displayStats();
 }
 
@@ -104,11 +103,6 @@ function displayStats(){
   $("#attempts-made").text(attempts);
   $("#accuracy-percentage").text(percentage+"%");
   $("#games-played").text(games_played);
-  // if (resetGame == true){
-  //   $("#attempts-made").text(0);
-  //   $("#accuracy-percentage").text(0 + "%");
-  // }
-  // resetGame = false;
 }
 
 function resetStats(){
@@ -117,7 +111,4 @@ function resetStats(){
   displayStats();
   $(".lfz-card").removeClass("hidden");
   $(".lfz-card").siblings().removeClass("hidden");
-
-
-
 }
