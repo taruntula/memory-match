@@ -43,6 +43,7 @@ function shuffle(array) {
 function handleCardClick (event){
   $(event.currentTarget).addClass("hidden");
   if (clickCounter === 0){
+    $(event.currentTarget).off('click',handleCardClick);
     firstCardClicked = $(event.currentTarget);
     clickCounter = 1;
     isSecondCardClicked = false;
