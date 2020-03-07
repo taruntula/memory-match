@@ -182,3 +182,11 @@ main {
   opacity: 0;
   transition: visibility 0s .3s, opacity .3s linear;
 }
+
+/* Media Queries  */
+@media (max-width:320px) {
+  .card {
+    height: 13%;
+    width: 30%;
+  }
+}
