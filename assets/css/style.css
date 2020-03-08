@@ -177,7 +177,6 @@ main {
 }
 
 .hidden {
-/* display: none; */
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .3s, opacity .3s linear;
@@ -189,4 +188,5 @@ main {
     height: 13%;
     width: 30%;
   }
+
 }
