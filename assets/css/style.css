@@ -188,5 +188,12 @@ main {
     height: 13%;
     width: 30%;
   }
+  aside div {
+    font-size: 0.7rem;
+  }
+  main {
+    margin: 0;
+    width: 76%;
+  }
 
 }
