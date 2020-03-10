@@ -88,7 +88,7 @@ main {
   justify-content: flex-end;
   height: 85%;
   width: 78%;
-  margin: 5px;
+  margin: 0;
   /* border-style: solid; */
   margin-left: auto;
 
@@ -183,6 +183,76 @@ main {
 }
 
 /* Media Queries  */
+
+/* iPad */
+@media (max-width:768px) {
+
+}
+
+/* mac smallest chrome window */
+@media (max-width:500px) {
+
+}
+
+/* mobile L */
+@media (max-width:425px) {
+
+}
+/* iPhone 6/7/8 plus */
+@media (max-width:414px) {
+
+}
+
+/* onePlus5t */
+@media (max-width:412px) {
+
+}
+
+/* Pixel 2 */
+@media (max-width:411px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside div {
+    font-size: 0.9rem;
+  }
+  main {
+    width: 75%;
+  }
+
+}
+
+/* iPhone 6/7/8 */
+@media (max-width:375px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside div {
+    font-size: 0.9rem;
+  }
+  main {
+    width: 75%;
+  }
+
+}
+/* Galaxy S5 */
+@media (max-width:360px) {
+  .card {
+    height: 13%;
+    width: 29%;
+  }
+  aside div {
+    font-size: 0.9rem;
+  }
+  main {
+    width: 76%;
+  }
+
+}
+
+/* iphone 5/SE */
 @media (max-width:320px) {
   .card {
     height: 13%;
@@ -192,7 +262,6 @@ main {
     font-size: 0.7rem;
   }
   main {
-    margin: 0;
     width: 76%;
   }
 
