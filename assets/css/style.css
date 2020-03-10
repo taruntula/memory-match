@@ -63,7 +63,7 @@ aside {
   align-items: center;
   height: 85%;
   margin: 5px;
-  font-size: large;
+  font-size: 1.5rem;
 }
 
 aside div {
@@ -74,7 +74,7 @@ aside div {
   background-color: rgba(85, 197, 160, 0.7);
   /* flex-direction: column; */
   justify-content: center;
-  font-size: large;
+  font-size: 2.2rem;
   border-style: solid;
   margin: 5px;
   align-items: center;
@@ -183,28 +183,110 @@ main {
 }
 
 /* Media Queries  */
+/* @media (max-width: 1440px) {
+  aside {
+    font-size: 2.8rem;
+  }
+  aside div {
+    font-size: 2.8rem;
+  }
+  .card {
+  height: 15%;
+  width: 26%;
+  }
+} */
+
+
+/* iPad Pro  */
+/* @media (max-width: 1024px) {
+  aside div {
+    font-size: 2.2rem;
+  }
+  .card {
+  height: 15%;
+  width: 26%;
+  }
+} */
 
 /* iPad */
 @media (max-width:768px) {
+  aside div {
+    font-size: 1.8rem;
+  }
+  .card {
+    height: 16%;
+    width: 17%;
+  }
 
 }
 
 /* mac smallest chrome window */
 @media (max-width:500px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside {
+    font-size: 1.1rem;
+  }
+  aside div {
+    font-size: 1.0rem;
+  }
+
 
 }
 
 /* mobile L */
 @media (max-width:425px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside {
+    font-size: 1.1rem;
+  }
+  aside div {
+    font-size: 1.0rem;
+  }
+  main {
+    width: 75%;
+  }
+
 
 }
 /* iPhone 6/7/8 plus */
 @media (max-width:414px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside {
+    font-size: 1.1rem;
+  }
+  aside div {
+    font-size: 1.0rem;
+  }
+  main {
+    width: 75%;
+  }
 
 }
 
 /* onePlus5t */
 @media (max-width:412px) {
+  .card {
+    height: 15%;
+    width: 28%;
+  }
+  aside {
+    font-size: 1.1rem;
+  }
+  aside div {
+    font-size: 0.9rem;
+  }
+  main {
+    width: 75%;
+  }
 
 }
 
@@ -213,6 +295,9 @@ main {
   .card {
     height: 15%;
     width: 28%;
+  }
+  aside {
+    font-size: 1.1rem;
   }
   aside div {
     font-size: 0.9rem;
@@ -229,6 +314,9 @@ main {
     height: 15%;
     width: 28%;
   }
+  aside {
+    font-size: 1.1rem;
+  }
   aside div {
     font-size: 0.9rem;
   }
@@ -242,6 +330,9 @@ main {
   .card {
     height: 13%;
     width: 29%;
+  }
+  aside {
+    font-size: 1.1rem;
   }
   aside div {
     font-size: 0.9rem;
@@ -257,6 +348,9 @@ main {
   .card {
     height: 13%;
     width: 30%;
+  }
+  aside {
+    font-size: 1.1rem;
   }
   aside div {
     font-size: 0.7rem;
