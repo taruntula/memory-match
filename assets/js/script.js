@@ -74,15 +74,22 @@ function handleCardClick (event){
       },1500);
     }
     if (matches === max_matches) {
-      var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
-      var resetButton = $("<button>").addClass("button").text("Play Again?");
-      $("body").append(winnerNotification);
-      winnerNotification.append(resetButton);
-      $(resetButton).on('click',function() {
+      $("#win-modal").removeClass("hidden");
+      $(".play-button").on('click',function() {
         resetStats();
-        winnerNotification.addClass("hidden");
-        resetButton.addClass("hidden");
-      });
+        $("#win-modal").addClass("hidden");
+      })
+      // var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
+      // var resetButton = $("<button>").addClass("button").text("Play Again?");
+      // var modalBody = $("<div>").addClass("modal_body");
+      // $("body").append(winnerNotification);
+      // winnerNotification.append(modalBody);
+      // winnerNotification.append(resetButton);
+      // $(resetButton).on('click',function() {
+      //   resetStats();
+      //   winnerNotification.addClass("hidden");
+      //   resetButton.addClass("hidden");
+      // });
       games_played++;
     }
   }
