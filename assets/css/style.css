@@ -12,19 +12,26 @@ body, html {
 
 .winning_box {
   position: fixed;
+  background-color: green;
+  /* display: flex;
   background-image: url("../images/winner.jpg");
   background-position: center;
   background-size:cover;
+  z-index: 1; */
   height: 50%;
   width: 50%;
+  left: 50%;
   top: 50%;
+  margin: auto;
+  transform: translate(-50%,-50%);
+  /* top: 50%;
   left: 50%;
   margin-top: -100px;
   margin-left: -250px;
   background-color: violet;
-  text-align: right;
+  text-align: right;  */
 }
-.button {
+/* .button {
   position: absolute;
   left: 70%;
   top: 30%;
@@ -39,6 +46,46 @@ body, html {
   display: inline-block;
   font-size: 16px;
   margin:auto;
+} */
+.win-modal {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  height: 50%;
+  width: 60%;
+  margin: auto;
+  background-image: url("../images/winner.jpg");
+  background-position: center;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+
+
+}
+.win-body {
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.button-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 33%;
+
+}
+.play-button {
+  text-align: center;
+  background-color: white;
+  padding-top: 10%;
+  width: 50%;
+  height: 37%;
+  margin: auto;
+
 }
 header {
   background-image: url("../images/SJ.png");
