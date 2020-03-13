@@ -264,6 +264,9 @@ main {
     height: 16%;
     width: 17%;
   }
+   .play-button {
+    width: 61%;
+  }
 
 }
 
@@ -272,6 +275,9 @@ main {
   .card {
     height: 15%;
     width: 28%;
+  }
+  .play-button {
+    width: 68%;
   }
   aside {
     font-size: 1.1rem;
