@@ -114,6 +114,10 @@ function displayStats(){
 }
 
 function resetStats(){
+  firstCardClicked = null;
+  secondCardClicked = null;
+  clickCounter = 0;
+  isSecondCardClicked = false;
   matches = null;
   attempts = null;
   displayStats();
