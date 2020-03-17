@@ -28,6 +28,14 @@ function addRandomCards (randomArray){
     $("#card" + startAtOneIndex).append(randomCardDiv);
   }
 }
+function resetRandomCards(randomArray) {
+  shuffle(randomArray);
+  for (var integerI = 0; integerI < randomArray.length; integerI++) {
+    var startAtOneIndex = integerI + 1;
+    $("#card"+startAtOneIndex+" div:nth-child(2)").removeClass();
+    $("#card"+startAtOneIndex+" div:nth-child(2)").addClass(randomArray[integerI]);
+  }
+}
 // Fisher-Yates shuffle
 function shuffle(array) {
   var i,j = 0;
@@ -64,14 +72,14 @@ function handleCardClick (event){
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
         $(".lfz-card").on('click', handleCardClick);
-      }, 1500);
+      }, 500);
     }
     else{
       setTimeout(function(){
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
         $(".lfz-card").on('click', handleCardClick);
-      },1500);
+      },700);
     }
     if (matches === max_matches) {
       $("#win-modal").removeClass("hidden");
@@ -114,6 +122,7 @@ function displayStats(){
 }
 
 function resetStats(){
+  resetRandomCards(randomCardClassesArray);
   firstCardClicked = null;
   secondCardClicked = null;
   clickCounter = 0;
