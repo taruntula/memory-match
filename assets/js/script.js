@@ -7,15 +7,15 @@ var isSecondCardClicked = false;
 var max_matches = 9;
 var attempts = null;
 var games_played = 1;
+var randomCardClassesArray = ["random-card-1", "random-card-1", "random-card-2", "random-card-2",
+  "random-card-3", "random-card-3", "random-card-4",
+  "random-card-4", "random-card-5", "random-card-5",
+  "random-card-6", "random-card-6", "random-card-7",
+  "random-card-7", "random-card-8", "random-card-8",
+  "random-card-9", "random-card-9"];
 
 
 function initializeApp(){
-  var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
-  "random-card-3","random-card-3","random-card-4",
-  "random-card-4","random-card-5","random-card-5",
-  "random-card-6","random-card-6","random-card-7",
-  "random-card-7","random-card-8","random-card-8",
-  "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick); //can do .off to take off click  handler.
 
