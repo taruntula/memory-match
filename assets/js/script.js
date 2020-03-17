@@ -7,15 +7,15 @@ var isSecondCardClicked = false;
 var max_matches = 9;
 var attempts = null;
 var games_played = 1;
+var randomCardClassesArray = ["random-card-1", "random-card-1", "random-card-2", "random-card-2",
+  "random-card-3", "random-card-3", "random-card-4",
+  "random-card-4", "random-card-5", "random-card-5",
+  "random-card-6", "random-card-6", "random-card-7",
+  "random-card-7", "random-card-8", "random-card-8",
+  "random-card-9", "random-card-9"];
 
 
 function initializeApp(){
-  var randomCardClassesArray = ["random-card-1","random-card-1","random-card-2","random-card-2",
-  "random-card-3","random-card-3","random-card-4",
-  "random-card-4","random-card-5","random-card-5",
-  "random-card-6","random-card-6","random-card-7",
-  "random-card-7","random-card-8","random-card-8",
-  "random-card-9","random-card-9"];
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick); //can do .off to take off click  handler.
 
@@ -26,6 +26,14 @@ function addRandomCards (randomArray){
     var startAtOneIndex = integerI + 1;
     var randomCardDiv = $("<div>").addClass(randomArray[integerI]);
     $("#card" + startAtOneIndex).append(randomCardDiv);
+  }
+}
+function resetRandomCards(randomArray) {
+  shuffle(randomArray);
+  for (var integerI = 0; integerI < randomArray.length; integerI++) {
+    var startAtOneIndex = integerI + 1;
+    $("#card"+startAtOneIndex+" div:nth-child(2)").removeClass();
+    $("#card"+startAtOneIndex+" div:nth-child(2)").addClass(randomArray[integerI]);
   }
 }
 // Fisher-Yates shuffle
@@ -64,14 +72,14 @@ function handleCardClick (event){
         frontCard1.addClass("hidden");
         frontCard2.addClass("hidden");
         $(".lfz-card").on('click', handleCardClick);
-      }, 1500);
+      }, 500);
     }
     else{
       setTimeout(function(){
         $(firstCardClicked).removeClass('hidden');
         $(secondCardClicked).removeClass('hidden');
         $(".lfz-card").on('click', handleCardClick);
-      },1500);
+      },700);
     }
     if (matches === max_matches) {
       $("#win-modal").removeClass("hidden");
@@ -114,6 +122,11 @@ function displayStats(){
 }
 
 function resetStats(){
+  resetRandomCards(randomCardClassesArray);
+  firstCardClicked = null;
+  secondCardClicked = null;
+  clickCounter = 0;
+  isSecondCardClicked = false;
   matches = null;
   attempts = null;
   displayStats();
