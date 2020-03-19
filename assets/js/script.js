@@ -14,12 +14,21 @@ var randomCardClassesArray = ["random-card-1", "random-card-1", "random-card-2",
   "random-card-7", "random-card-8", "random-card-8",
   "random-card-9", "random-card-9"];
 
-
 function initializeApp(){
   addRandomCards(randomCardClassesArray);
   $(".lfz-card").on('click',handleCardClick); //can do .off to take off click  handler.
-
+  // $(".lfz-card").on('click',handleClickAudio);
 }
+
+function loadSound(){
+  var soundID = "swoosh";
+  createjs.Sound.registerSound("/assets/audio/sword-swoosh.mp3", soundID);
+}
+
+function playSound(soundID){
+  createjs.Sound.play(soundID);
+}
+
 function addRandomCards (randomArray){
   shuffle(randomArray);
   for (var integerI = 0; integerI < randomArray.length; integerI++) {
@@ -28,6 +37,7 @@ function addRandomCards (randomArray){
     $("#card" + startAtOneIndex).append(randomCardDiv);
   }
 }
+
 function resetRandomCards(randomArray) {
   shuffle(randomArray);
   for (var integerI = 0; integerI < randomArray.length; integerI++) {
@@ -49,6 +59,7 @@ function shuffle(array) {
 }
 
 function handleCardClick (event){
+  playSound("swoosh");
   $(event.currentTarget).addClass("hidden");
   if (clickCounter === 0){
     $(event.currentTarget).off('click',handleCardClick);
@@ -87,17 +98,6 @@ function handleCardClick (event){
         resetStats();
         $("#win-modal").addClass("hidden");
       })
-      // var winnerNotification = $("<div>").addClass("winning_box").text("YOU WON");
-      // var resetButton = $("<button>").addClass("button").text("Play Again?");
-      // var modalBody = $("<div>").addClass("modal_body");
-      // $("body").append(winnerNotification);
-      // winnerNotification.append(modalBody);
-      // winnerNotification.append(resetButton);
-      // $(resetButton).on('click',function() {
-      //   resetStats();
-      //   winnerNotification.addClass("hidden");
-      //   resetButton.addClass("hidden");
-      // });
       games_played++;
     }
   }
