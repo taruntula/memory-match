@@ -16,8 +16,8 @@ var randomCardClassesArray = ["random-card-1", "random-card-1", "random-card-2",
 
 function initializeApp(){
   addRandomCards(randomCardClassesArray);
-  $(".lfz-card").on('click',handleCardClick); //can do .off to take off click  handler.
-  // $(".lfz-card").on('click',handleClickAudio);
+  $(".lfz-card").on('click',handleCardClick);
+
 }
 
 function loadSound(){
