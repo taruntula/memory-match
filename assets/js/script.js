@@ -26,7 +26,9 @@ function loadSound(){
 }
 
 function playSound(soundID){
-  createjs.Sound.play(soundID);
+  var audio = null;
+  audio = createjs.Sound.play(soundID);
+  audio.volume = 0.2;
 }
 
 function addRandomCards (randomArray){
