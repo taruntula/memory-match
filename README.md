@@ -22,7 +22,7 @@ A simple memory match game inspired by the cartoon Samurai Jack
 ## Development
 1. Clone the repository
 ```
-git clone https://github.com/taruntula/memory_match.git
-cd memory_match
+git clone https://github.com/taruntula/memory-match.git
+cd memory-match
 ```
 2. Start the project. Once started you can view the application by opening the index.html in your browser.
