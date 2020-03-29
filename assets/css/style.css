@@ -86,8 +86,13 @@ body, html {
   width: 50%;
   height: 37%;
   margin: auto;
-
+  transition-duration: 0.4s;
 }
+
+.play-button:hover {
+  background-color: lightslategray;
+}
+
 header {
   background-image: url("../images/SJ.png");
   background-position: center center;
