@@ -87,6 +87,7 @@ body, html {
   height: 37%;
   margin: auto;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .play-button:hover {
@@ -162,6 +163,7 @@ main {
   height: 30%;
   width: 15%;
   transform-style: preserve-3d;
+  cursor: pointer;
   }
 
 .card:hover {
