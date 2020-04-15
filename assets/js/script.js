@@ -95,12 +95,15 @@ function handleCardClick (event){
       },700);
     }
     if (matches === max_matches) {
-      $("#win-modal").removeClass("hidden");
+      setTimeout(function(){
+        $("#win-modal").removeClass("hidden");
       $(".play-button").on('click',function() {
         resetStats();
         $("#win-modal").addClass("hidden");
       })
       games_played++;
+      },1500);
+      
     }
   }
   displayStats();
