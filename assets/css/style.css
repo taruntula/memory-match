@@ -131,9 +131,9 @@ main {
   cursor: pointer;
   }
 
-.card:hover {
+/* .card:hover {
         transform: scale(1.1);
-  }
+  } */
 
 .grow {
   transition: all .2s ease-in-out;
@@ -151,9 +151,13 @@ main {
   width: 100%;
   box-sizing: border-box;
   background-image: url("../images/samurai-jack-back.png");
+  /* transform-style: preserve-3d; */
   background-position: center center;
   background-size: cover;
 }
+.lfz-card:hover {
+        transform: scale(1.1);
+  }
 
 .random-card-1, .random-card-2, .random-card-3, .random-card-4, .random-card-5,
 .random-card-6, .random-card-7, .random-card-8, .random-card-9 {
